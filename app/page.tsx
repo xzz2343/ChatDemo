@@ -56,11 +56,32 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Breadcrumb */}
+      <nav
+        aria-label="Breadcrumb"
+        className="px-4 py-1.5 border-b border-terminal-border bg-terminal-surface"
+      >
+        <ol className="flex items-center gap-1.5 text-xs text-terminal-muted select-none">
+          <li>
+            <a
+              href="https://www.buckshot-consulting.com/portfolio/"
+              className="hover:text-terminal-text transition-colors"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li aria-hidden="true">›</li>
+          <li className="text-terminal-text font-medium" aria-current="page">
+            Chat Demo
+          </li>
+        </ol>
+      </nav>
+
       {/* Main content */}
       <main
         id="main-content"
         className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-3 p-3 overflow-hidden"
-        style={{ height: "calc(100vh - 53px)" }}
+        style={{ height: "calc(100vh - 82px)" }}
       >
         <ChatPane
           messages={messages}
