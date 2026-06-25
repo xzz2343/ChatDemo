@@ -3,4 +3,6 @@
     SetEnv no-gzip 1
     SetEnv dont-vary 1
     Header set X-Accel-Buffering "no"
+    php_value max_execution_time 120
+    php_value max_input_time 120
 </Files>

@@ -247,6 +247,7 @@ function curl_get(string $url): string|false {
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT        => 10,
+        CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_FOLLOWLOCATION => true,
     ]);
     $result = curl_exec($ch);
