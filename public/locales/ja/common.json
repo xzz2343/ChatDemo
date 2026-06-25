@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Claude搭載",
+    "toolsLabel": "ツール："
+  },
+  "chat": {
+    "heading": "チャット",
+    "clear": "クリア",
+    "clearLabel": "会話をクリア",
+    "chatsCounter": "{{used}}/{{max}} チャット",
+    "placeholder": "何でも聞いてください — 例：「パリの天気は？」や「1337 × 42 は？」",
+    "inputPlaceholder": "メッセージを入力… (Enter で送信、Shift+Enter で改行)",
+    "inputLabel": "メッセージ",
+    "stop": "停止",
+    "stopLabel": "生成を停止",
+    "send": "送信",
+    "sendLabel": "メッセージを送信",
+    "thinking": "考え中",
+    "errorPrefix": "エラー：",
+    "limitReached": "セッション制限に達しました。",
+    "refreshSession": "セッションをリセット",
+    "refreshSessionSuffix": "して続行してください。"
+  },
+  "log": {
+    "heading": "エージェント内部",
+    "eventsCount_one": "{{count}} イベント",
+    "eventsCount_other": "{{count}} イベント",
+    "placeholder": "メッセージを送信するとイベントがここに表示されます。",
+    "userMessageReceived": "メッセージを受信しました",
+    "callingTool": "ツール呼び出し：",
+    "toolInput": "入力：",
+    "resultFrom": "ツール結果",
+    "generating": "応答を生成中…",
+    "done": "完了",
+    "errorPrefix": "エラー："
+  },
+  "languageSwitcher": {
+    "label": "言語"
+  },
+  "theme": {
+    "toggleDark": "ダークモードに切替",
+    "toggleLight": "ライトモードに切替"
+  }
+}

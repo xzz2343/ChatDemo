@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Drivs av Claude",
+    "toolsLabel": "Verktyg:"
+  },
+  "chat": {
+    "heading": "Chatt",
+    "clear": "rensa",
+    "clearLabel": "Rensa konversation",
+    "chatsCounter": "{{used}}/{{max}} chattar",
+    "placeholder": "Fråga vad som helst — t.ex. \"Vad är vädret i Paris?\" eller \"Vad är 1337 × 42?\"",
+    "inputPlaceholder": "Skriv ett meddelande… (Enter för att skicka, Shift+Enter för ny rad)",
+    "inputLabel": "Meddelande",
+    "stop": "stopp",
+    "stopLabel": "Stoppa generering",
+    "send": "skicka",
+    "sendLabel": "Skicka meddelande",
+    "thinking": "tänker",
+    "errorPrefix": "Fel:",
+    "limitReached": "Sessionsgräns nådd.",
+    "refreshSession": "Förnya din session",
+    "refreshSessionSuffix": "för att fortsätta."
+  },
+  "log": {
+    "heading": "Agentens internals",
+    "eventsCount_one": "{{count}} händelse",
+    "eventsCount_other": "{{count}} händelser",
+    "placeholder": "Händelser visas här när du skickar ett meddelande.",
+    "userMessageReceived": "Meddelande mottaget",
+    "callingTool": "Anropar verktyg:",
+    "toolInput": "indata:",
+    "resultFrom": "Resultat från",
+    "generating": "Genererar svar…",
+    "done": "Klar",
+    "errorPrefix": "Fel:"
+  },
+  "languageSwitcher": {
+    "label": "Språk"
+  },
+  "theme": {
+    "toggleDark": "Byt till mörkt läge",
+    "toggleLight": "Byt till ljust läge"
+  }
+}

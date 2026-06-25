@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Claude द्वारा संचालित",
+    "toolsLabel": "टूल्स:"
+  },
+  "chat": {
+    "heading": "चैट",
+    "clear": "साफ़ करें",
+    "clearLabel": "वार्तालाप साफ़ करें",
+    "chatsCounter": "{{used}}/{{max}} चैट",
+    "placeholder": "कुछ भी पूछें — जैसे \"पेरिस में मौसम कैसा है?\" या \"1337 × 42 कितना है?\"",
+    "inputPlaceholder": "संदेश लिखें… (Enter भेजने के लिए, Shift+Enter नई पंक्ति के लिए)",
+    "inputLabel": "संदेश",
+    "stop": "रोकें",
+    "stopLabel": "उत्पादन रोकें",
+    "send": "भेजें",
+    "sendLabel": "संदेश भेजें",
+    "thinking": "सोच रहा है",
+    "errorPrefix": "त्रुटि:",
+    "limitReached": "सत्र सीमा पूरी हो गई।",
+    "refreshSession": "अपना सत्र रीफ्रेश करें",
+    "refreshSessionSuffix": "जारी रखने के लिए।"
+  },
+  "log": {
+    "heading": "एजेंट आंतरिक",
+    "eventsCount_one": "{{count}} घटना",
+    "eventsCount_other": "{{count}} घटनाएँ",
+    "placeholder": "संदेश भेजने पर घटनाएँ यहाँ दिखेंगी।",
+    "userMessageReceived": "संदेश प्राप्त हुआ",
+    "callingTool": "टूल कॉल:",
+    "toolInput": "इनपुट:",
+    "resultFrom": "परिणाम",
+    "generating": "उत्तर तैयार हो रहा है…",
+    "done": "पूर्ण",
+    "errorPrefix": "त्रुटि:"
+  },
+  "languageSwitcher": {
+    "label": "भाषा"
+  },
+  "theme": {
+    "toggleDark": "डार्क मोड में बदलें",
+    "toggleLight": "लाइट मोड में बदलें"
+  }
+}

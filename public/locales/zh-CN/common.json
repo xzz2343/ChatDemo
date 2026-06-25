@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "由 Claude 驱动",
+    "toolsLabel": "工具："
+  },
+  "chat": {
+    "heading": "聊天",
+    "clear": "清空",
+    "clearLabel": "清空对话",
+    "chatsCounter": "{{used}}/{{max}} 次对话",
+    "placeholder": "问任何问题 — 例如「巴黎天气怎么样？」或「1337 × 42 是多少？」",
+    "inputPlaceholder": "输入消息… (Enter 发送，Shift+Enter 换行)",
+    "inputLabel": "消息",
+    "stop": "停止",
+    "stopLabel": "停止生成",
+    "send": "发送",
+    "sendLabel": "发送消息",
+    "thinking": "思考中",
+    "errorPrefix": "错误：",
+    "limitReached": "已达到本次会话上限。",
+    "refreshSession": "刷新会话",
+    "refreshSessionSuffix": "以继续。"
+  },
+  "log": {
+    "heading": "智能体内部",
+    "eventsCount_one": "{{count}} 个事件",
+    "eventsCount_other": "{{count}} 个事件",
+    "placeholder": "发送消息后，事件将显示在此处。",
+    "userMessageReceived": "已收到消息",
+    "callingTool": "调用工具：",
+    "toolInput": "输入：",
+    "resultFrom": "工具结果",
+    "generating": "正在生成回复…",
+    "done": "完成",
+    "errorPrefix": "错误："
+  },
+  "languageSwitcher": {
+    "label": "语言"
+  },
+  "theme": {
+    "toggleDark": "切换深色模式",
+    "toggleLight": "切换浅色模式"
+  }
+}

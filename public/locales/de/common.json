@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Powered by Claude",
+    "toolsLabel": "Tools:"
+  },
+  "chat": {
+    "heading": "Chat",
+    "clear": "löschen",
+    "clearLabel": "Unterhaltung löschen",
+    "chatsCounter": "{{used}}/{{max}} Chats",
+    "placeholder": "Frag alles – z.B. „Wie ist das Wetter in Paris?" oder „Was ist 1337 × 42?"",
+    "inputPlaceholder": "Nachricht eingeben… (Enter zum Senden, Shift+Enter für Zeilenumbruch)",
+    "inputLabel": "Nachricht",
+    "stop": "stopp",
+    "stopLabel": "Generierung stoppen",
+    "send": "senden",
+    "sendLabel": "Nachricht senden",
+    "thinking": "denkt nach",
+    "errorPrefix": "Fehler:",
+    "limitReached": "Sitzungslimit erreicht.",
+    "refreshSession": "Sitzung zurücksetzen",
+    "refreshSessionSuffix": "um fortzufahren."
+  },
+  "log": {
+    "heading": "Agenteninterna",
+    "eventsCount_one": "{{count}} Ereignis",
+    "eventsCount_other": "{{count}} Ereignisse",
+    "placeholder": "Ereignisse erscheinen hier, wenn Sie eine Nachricht senden.",
+    "userMessageReceived": "Nachricht empfangen",
+    "callingTool": "Tool aufrufen:",
+    "toolInput": "Eingabe:",
+    "resultFrom": "Ergebnis von",
+    "generating": "Antwort wird generiert…",
+    "done": "Fertig",
+    "errorPrefix": "Fehler:"
+  },
+  "languageSwitcher": {
+    "label": "Sprache"
+  },
+  "theme": {
+    "toggleDark": "Dunkelmodus aktivieren",
+    "toggleLight": "Hellmodus aktivieren"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Alimentato da Claude",
+    "toolsLabel": "Strumenti:"
+  },
+  "chat": {
+    "heading": "Chat",
+    "clear": "cancella",
+    "clearLabel": "Cancella conversazione",
+    "chatsCounter": "{{used}}/{{max}} chat",
+    "placeholder": "Chiedi qualsiasi cosa — p.es. «Che tempo fa a Parigi?» o «Quanto fa 1337 × 42?»",
+    "inputPlaceholder": "Scrivi un messaggio… (Invio per inviare, Shift+Invio per una nuova riga)",
+    "inputLabel": "Messaggio",
+    "stop": "ferma",
+    "stopLabel": "Ferma la generazione",
+    "send": "invia",
+    "sendLabel": "Invia messaggio",
+    "thinking": "pensando",
+    "errorPrefix": "Errore:",
+    "limitReached": "Limite di sessione raggiunto.",
+    "refreshSession": "Aggiorna la sessione",
+    "refreshSessionSuffix": "per continuare."
+  },
+  "log": {
+    "heading": "Internals dell'agente",
+    "eventsCount_one": "{{count}} evento",
+    "eventsCount_other": "{{count}} eventi",
+    "placeholder": "Gli eventi appariranno qui quando invierai un messaggio.",
+    "userMessageReceived": "Messaggio ricevuto",
+    "callingTool": "Chiamata strumento:",
+    "toolInput": "input:",
+    "resultFrom": "Risultato da",
+    "generating": "Generazione risposta…",
+    "done": "Fatto",
+    "errorPrefix": "Errore:"
+  },
+  "languageSwitcher": {
+    "label": "Lingua"
+  },
+  "theme": {
+    "toggleDark": "Passa alla modalità scura",
+    "toggleLight": "Passa alla modalità chiara"
+  }
+}

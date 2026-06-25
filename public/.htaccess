@@ -1,0 +1,6 @@
+# Disable gzip compression for the PHP proxy so SSE streams immediately
+<Files "proxy.php">
+    SetEnv no-gzip 1
+    SetEnv dont-vary 1
+    Header set X-Accel-Buffering "no"
+</Files>

@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "powered by Claude",
+    "toolsLabel": "Tools:"
+  },
+  "chat": {
+    "heading": "Chat",
+    "clear": "clear",
+    "clearLabel": "Clear conversation",
+    "chatsCounter": "{{used}}/{{max}} chats",
+    "placeholder": "Ask anything — try \"What's the weather in Paris?\" or \"What is 1337 × 42?\"",
+    "inputPlaceholder": "Type a message… (Enter to send, Shift+Enter for newline)",
+    "inputLabel": "Message",
+    "stop": "stop",
+    "stopLabel": "Stop generation",
+    "send": "send",
+    "sendLabel": "Send message",
+    "thinking": "thinking",
+    "errorPrefix": "Error:",
+    "limitReached": "Session limit reached.",
+    "refreshSession": "Refresh your session",
+    "refreshSessionSuffix": "to continue."
+  },
+  "log": {
+    "heading": "Agent Internals",
+    "eventsCount_one": "{{count}} event",
+    "eventsCount_other": "{{count}} events",
+    "placeholder": "Events will appear here when you send a message.",
+    "userMessageReceived": "User message received",
+    "callingTool": "Calling tool:",
+    "toolInput": "input:",
+    "resultFrom": "Result from",
+    "generating": "Generating response…",
+    "done": "Done",
+    "errorPrefix": "Error:"
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  },
+  "theme": {
+    "toggleDark": "Switch to dark mode",
+    "toggleLight": "Switch to light mode"
+  }
+}

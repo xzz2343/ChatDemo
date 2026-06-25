@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Drevet av Claude",
+    "toolsLabel": "Verktøy:"
+  },
+  "chat": {
+    "heading": "Chat",
+    "clear": "tøm",
+    "clearLabel": "Tøm samtale",
+    "chatsCounter": "{{used}}/{{max}} chatter",
+    "placeholder": "Spør om hva som helst — f.eks. \"Hva er været i Paris?\" eller \"Hva er 1337 × 42?\"",
+    "inputPlaceholder": "Skriv en melding… (Enter for å sende, Shift+Enter for ny linje)",
+    "inputLabel": "Melding",
+    "stop": "stopp",
+    "stopLabel": "Stopp generering",
+    "send": "send",
+    "sendLabel": "Send melding",
+    "thinking": "tenker",
+    "errorPrefix": "Feil:",
+    "limitReached": "Sesjonsgrense nådd.",
+    "refreshSession": "Forny økt",
+    "refreshSessionSuffix": "for å fortsette."
+  },
+  "log": {
+    "heading": "Agentens internals",
+    "eventsCount_one": "{{count}} hendelse",
+    "eventsCount_other": "{{count}} hendelser",
+    "placeholder": "Hendelser vises her når du sender en melding.",
+    "userMessageReceived": "Melding mottatt",
+    "callingTool": "Kaller verktøy:",
+    "toolInput": "inndata:",
+    "resultFrom": "Resultat fra",
+    "generating": "Genererer svar…",
+    "done": "Ferdig",
+    "errorPrefix": "Feil:"
+  },
+  "languageSwitcher": {
+    "label": "Språk"
+  },
+  "theme": {
+    "toggleDark": "Bytt til mørk modus",
+    "toggleLight": "Bytt til lys modus"
+  }
+}

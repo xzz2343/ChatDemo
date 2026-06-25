@@ -1,0 +1,44 @@
+{
+  "header": {
+    "subtitle": "Aangedreven door Claude",
+    "toolsLabel": "Tools:"
+  },
+  "chat": {
+    "heading": "Chat",
+    "clear": "wissen",
+    "clearLabel": "Gesprek wissen",
+    "chatsCounter": "{{used}}/{{max}} chats",
+    "placeholder": "Stel alles — bijv. \"Wat is het weer in Parijs?\" of \"Wat is 1337 × 42?\"",
+    "inputPlaceholder": "Typ een bericht… (Enter om te verzenden, Shift+Enter voor nieuwe regel)",
+    "inputLabel": "Bericht",
+    "stop": "stoppen",
+    "stopLabel": "Generatie stoppen",
+    "send": "verzenden",
+    "sendLabel": "Bericht verzenden",
+    "thinking": "denkt na",
+    "errorPrefix": "Fout:",
+    "limitReached": "Sessielimiet bereikt.",
+    "refreshSession": "Vernieuw uw sessie",
+    "refreshSessionSuffix": "om door te gaan."
+  },
+  "log": {
+    "heading": "Agent-internals",
+    "eventsCount_one": "{{count}} gebeurtenis",
+    "eventsCount_other": "{{count}} gebeurtenissen",
+    "placeholder": "Gebeurtenissen verschijnen hier wanneer u een bericht stuurt.",
+    "userMessageReceived": "Bericht ontvangen",
+    "callingTool": "Tool aanroepen:",
+    "toolInput": "invoer:",
+    "resultFrom": "Resultaat van",
+    "generating": "Antwoord genereren…",
+    "done": "Klaar",
+    "errorPrefix": "Fout:"
+  },
+  "languageSwitcher": {
+    "label": "Taal"
+  },
+  "theme": {
+    "toggleDark": "Naar donkere modus",
+    "toggleLight": "Naar lichte modus"
+  }
+}

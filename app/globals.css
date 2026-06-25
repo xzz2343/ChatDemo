@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Class-based dark mode — overrides the default media-query variant */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Light mode — default */
+  --color-terminal-bg:         #f6f8fa;
+  --color-terminal-surface:    #ffffff;
+  --color-terminal-border:     #d0d7de;
+  --color-terminal-green:      #116329;
+  --color-terminal-green-dim:  #1a7f37;
+  --color-terminal-amber:      #6e3800;
+  --color-terminal-red:        #cf222e;
+  --color-terminal-blue:       #0550ae;
+  --color-terminal-muted:      #57606a;
+  --color-terminal-text:       #1f2328;
+  --font-mono: var(--font-mono), ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+}
+
+/* Dark mode token overrides */
+.dark {
+  --color-terminal-bg:         #0d1117;
+  --color-terminal-surface:    #161b22;
+  --color-terminal-border:     #30363d;
+  --color-terminal-green:      #39d353;
+  --color-terminal-green-dim:  #26a641;
+  --color-terminal-amber:      #f0a500;
+  --color-terminal-red:        #f85149;
+  --color-terminal-blue:       #58a6ff;
+  --color-terminal-muted:      #8b949e;
+  --color-terminal-text:       #c9d1d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  font-family: var(--font-mono);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terminal-muted);
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.1em;
+  background-color: var(--color-terminal-green);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
