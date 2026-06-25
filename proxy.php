@@ -379,7 +379,8 @@ function wmo_code_to_description(int $code): string {
     return $map[$code] ?? 'unknown conditions';
 }
 
-function execute_tool(string $name, array $input): string {
+function execute_tool(string $name, mixed $input): string {
+    $input = (array) $input; // input may arrive as stdClass due to (object) cast in tool loop
     switch ($name) {
         case 'get_current_datetime':
             return tool_get_current_datetime();
