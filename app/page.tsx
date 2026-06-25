@@ -64,10 +64,10 @@ export default function Home() {
         <ol className="flex items-center gap-1.5 text-xs text-terminal-muted select-none">
           <li>
             <a
-              href="https://www.buckshot-consulting.com/portfolio/"
+              href="https://www.buckshot-consulting.com/resume/"
               className="hover:text-terminal-text transition-colors"
             >
-              Portfolio
+              Experience
             </a>
           </li>
           <li aria-hidden="true">›</li>
