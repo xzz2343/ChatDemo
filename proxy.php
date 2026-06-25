@@ -101,32 +101,45 @@ function check_ip_limit(): void {
     fclose($fp);
 }
 
-function check_session_limit(string $token): void {
-    // Validate token looks like a UUID v4 before using it as a file key
+function session_file(string $token): string|false {
     if (!preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', $token)) {
-        return;
+        return false;
     }
+    return rl_dir() . DIRECTORY_SEPARATOR . 'sess_' . hash('sha256', $token) . '.json';
+}
 
-    $key  = hash('sha256', $token);
-    $file = rl_dir() . DIRECTORY_SEPARATOR . 'sess_' . $key . '.json';
+function check_session_limit(string $token): void {
+    $file = session_file($token);
+    if ($file === false) return;
 
     $fp = @fopen($file, 'c+');
     if (!$fp) return;
 
     flock($fp, LOCK_EX);
+    $raw   = stream_get_contents($fp);
+    $data  = $raw ? (json_decode($raw, true) ?? []) : [];
+    $count = (int) (is_array($data) ? ($data['count'] ?? 0) : 0);
+    flock($fp, LOCK_UN);
+    fclose($fp);
 
+    if ($count >= MAX_CHATS_PER_SESSION) {
+        sseError('You\'ve used all ' . MAX_CHATS_PER_SESSION . ' chats for this session. Open a private/incognito window to start a new session.');
+    }
+}
+
+function increment_session_count(string $token): void {
+    $file = session_file($token);
+    if ($file === false) return;
+
+    $fp = @fopen($file, 'c+');
+    if (!$fp) return;
+
+    flock($fp, LOCK_EX);
     $raw  = stream_get_contents($fp);
     $data = $raw ? (json_decode($raw, true) ?? []) : [];
     if (!is_array($data)) $data = [];
-    $count = (int) ($data['count'] ?? 0);
 
-    if ($count >= MAX_CHATS_PER_SESSION) {
-        flock($fp, LOCK_UN);
-        fclose($fp);
-        sseError('You\'ve used all 5 chats for this session. Refresh the page to start a new session.');
-    }
-
-    $data['count'] = $count + 1;
+    $data['count'] = (int) ($data['count'] ?? 0) + 1;
     $data['last']  = time();
     if (!isset($data['created'])) $data['created'] = time();
 
@@ -523,6 +536,7 @@ for ($round = 0; $round < MAX_TOOL_ROUNDS; $round++) {
         'elapsed_ms' => $elapsed,
         'tokens'     => $totalInputTokens + $totalOutputTokens,
     ]);
+    if ($sessionToken !== '') increment_session_count($sessionToken);
     sse('done');
     exit;
 }
