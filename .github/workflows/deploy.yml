@@ -36,4 +36,3 @@ jobs:
           lftp -u "${{ secrets.FTP_USERNAME }}","$SFTP_PASSWORD" \
                -e "set sftp:auto-confirm yes; mirror -R --delete --verbose ./dist/ httpdocs/chatdemo/; quit" \
                sftp://access-5020765337.webspace-host.com:22
-
