@@ -217,8 +217,76 @@ function tool_get_current_datetime(): string {
     return date('Y-m-d H:i:s T');
 }
 
+// Recursive descent parser — replaces eval() which is blocked on many shared hosts.
+class ExprParser {
+    private array $tokens;
+    private int $pos = 0;
+
+    public function __construct(string $expr) {
+        preg_match_all('/\d+\.?\d*|[+\-*\/()]/', $expr, $m);
+        $this->tokens = $m[0];
+    }
+
+    public function parse(): float {
+        $result = $this->parseExpr();
+        if ($this->pos < count($this->tokens)) {
+            throw new \RuntimeException('Unexpected token: ' . $this->tokens[$this->pos]);
+        }
+        return $result;
+    }
+
+    private function parseExpr(): float {
+        $result = $this->parseTerm();
+        while ($this->pos < count($this->tokens) && in_array($this->tokens[$this->pos], ['+', '-'])) {
+            $op = $this->tokens[$this->pos++];
+            $right = $this->parseTerm();
+            $result = $op === '+' ? $result + $right : $result - $right;
+        }
+        return $result;
+    }
+
+    private function parseTerm(): float {
+        $result = $this->parseFactor();
+        while ($this->pos < count($this->tokens) && in_array($this->tokens[$this->pos], ['*', '/'])) {
+            $op = $this->tokens[$this->pos++];
+            $right = $this->parseFactor();
+            if ($op === '/') {
+                if ($right == 0) throw new \RuntimeException('Division by zero');
+                $result /= $right;
+            } else {
+                $result *= $right;
+            }
+        }
+        return $result;
+    }
+
+    private function parseFactor(): float {
+        if ($this->pos >= count($this->tokens)) {
+            throw new \RuntimeException('Unexpected end of expression');
+        }
+        $token = $this->tokens[$this->pos];
+        if ($token === '(') {
+            $this->pos++;
+            $result = $this->parseExpr();
+            if ($this->pos >= count($this->tokens) || $this->tokens[$this->pos] !== ')') {
+                throw new \RuntimeException('Missing closing parenthesis');
+            }
+            $this->pos++;
+            return $result;
+        }
+        if ($token === '-') {
+            $this->pos++;
+            return -$this->parseFactor();
+        }
+        if (is_numeric($token)) {
+            $this->pos++;
+            return (float) $token;
+        }
+        throw new \RuntimeException('Unexpected token: ' . $token);
+    }
+}
+
 function tool_calculate(string $expression): string {
-    // Whitelist: only digits, operators, parens, dots, spaces
     if (!preg_match('/^[\d\s\+\-\*\/\(\)\.]+$/', $expression)) {
         return 'Error: expression contains disallowed characters';
     }
@@ -226,20 +294,15 @@ function tool_calculate(string $expression): string {
     if ($expression === '') {
         return 'Error: empty expression';
     }
-    // Use eval safely after whitelist check
-    $result = null;
     try {
-        // phpcs:ignore
-        $result = @eval('return ' . $expression . ';');
+        $result = (new ExprParser($expression))->parse();
+        if ($result == (int) $result) {
+            return (string) (int) $result;
+        }
+        return rtrim(rtrim(number_format($result, 10, '.', ''), '0'), '.');
     } catch (\Throwable $e) {
         return 'Error: ' . $e->getMessage();
     }
-    if ($result === null || $result === false) {
-        return 'Error: could not evaluate expression';
-    }
-    return is_float($result)
-        ? rtrim(rtrim(number_format($result, 10, '.', ''), '0'), '.')
-        : (string) $result;
 }
 
 function curl_get(string $url): string|false {
