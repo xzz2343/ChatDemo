@@ -28,11 +28,12 @@ jobs:
       - name: Add proxy to build output
         run: cp proxy.php out/proxy.php
 
-      - name: Deploy to IONOS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /httpdocs/chatdemo/
+      - name: Deploy via SFTP
+        env:
+          SFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u "${{ secrets.FTP_USERNAME }}","$SFTP_PASSWORD" \
+               -e "set sftp:auto-confirm yes; mirror -R --delete --verbose ./dist/ httpdocs/chatdemo/; quit" \
+               sftp://access-5020765337.webspace-host.com:22
+
